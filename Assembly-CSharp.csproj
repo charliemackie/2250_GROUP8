@@ -101,12 +101,14 @@
      <Compile Include="Assets\_Scripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\EnemyRandomController.cs" />
      <Compile Include="Assets\_Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Water (Basic)\Scripts\WaterBasic.cs" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\Fog.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
@@ -126,6 +128,7 @@
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\Common.cginc" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+     <None Include="Assets\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Editor Resources\UI\Trackball.shader" />
      <None Include="Assets\_LandMaterials\Environment\Particles\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\_LandMaterials\Environment\PostProcessing\Resources\Shaders\Bloom.cginc" />
