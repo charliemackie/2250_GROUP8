@@ -57,4 +57,7 @@ public class EnemyStats : CharacterStats
         yield return new WaitForSeconds(wait_time);
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
     }
+    
+
+
 }
