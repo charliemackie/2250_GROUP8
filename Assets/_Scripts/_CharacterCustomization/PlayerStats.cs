@@ -70,8 +70,22 @@ public class PlayerStats : CharacterStats
         }
     }
 
-    // Take damage / reduce healthbar
-    void TakeDamage(int damage)
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("HERE");
+        if (collision.collider.CompareTag("Enemy1"))
+        {
+            TakeDamage(2);
+        }
+
+        if (collision.collider.CompareTag("Enemy2"))
+        {
+            TakeDamage(1);
+        }
+    }
+
+        // Take damage / reduce healthbar
+        void TakeDamage(int damage)
     {
         currentHealth -= (damage - defense);
 
