@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         // Move the player depending on speed
-        Debug.Log(playerStats.getSpeed());
         controller.Move(move * playerStats.getSpeed() * Time.deltaTime);
 
         // Allow the player to jump if grounded
