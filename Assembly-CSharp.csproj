@@ -113,7 +113,6 @@
      <Compile Include="Assets\_Scripts\_EnemyScripts\EnemyRandomController.cs" />
      <Compile Include="Assets\_Scripts\_PlayerScripts\PlayerMovement\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\_PlayerScripts\PlayerMovement\PlayerMotor.cs" />
-     <Compile Include="Assets\EnemyDamage.cs" />
      <Compile Include="Assets\RayCastShoot.cs" />
      <Compile Include="Assets\RayViewer.cs" />
      <None Include="Assets\_Materials\_LandMaterials\Environment\PostProcessing\Resources\Shaders\DepthOfField.shader" />

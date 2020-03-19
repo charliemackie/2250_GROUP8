@@ -72,7 +72,7 @@ public class PlayerStats : CharacterStats
         if (timer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             timer = 2;
-            StartCoroutine(swordAnimation());
+            StartCoroutine(SwordAnimation());
             attack = true;
         }
     }
@@ -81,7 +81,7 @@ public class PlayerStats : CharacterStats
     /// Sword prefab animation that pops up when the player attacks
     /// </summary>
     /// <returns></returns>
-    IEnumerator swordAnimation()
+    IEnumerator SwordAnimation()
     {
         Vector3 pos = new Vector3(-0.9f, 0.6f, 1.03f);
         Quaternion rot = Quaternion.Euler(-50, 0, 90);

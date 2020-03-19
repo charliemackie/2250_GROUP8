@@ -34,7 +34,7 @@ public class EnemyStats : CharacterStats
         // If the player is in range of the enemy and the player is attacking the enemy than it must deal damage
         if(playerInRange && PlayerStats.attack == true){
             currentHealth -= (25 - defense);
-            StartCoroutine(enemyHurt());
+            StartCoroutine(EnemyHurt());
         }
     }
 
@@ -79,13 +79,23 @@ public class EnemyStats : CharacterStats
     /// Animation turning the enemy red when its hit
     /// </summary>
     /// <returns></returns>
-    IEnumerator enemyHurt()
+    IEnumerator EnemyHurt()
     {
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
     }
-    
+
+    public void GunDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if (currentHealth <= 0)
+        {
+
+            gameObject.SetActive(false);
+        }
+    }
+
 
 
 }

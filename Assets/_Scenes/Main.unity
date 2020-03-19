@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 360447563}
   - component: {fileID: 360447562}
   - component: {fileID: 360447567}
-  - component: {fileID: 360447568}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -581,19 +580,6 @@ MonoBehaviour:
   strength: 0
   currentHealth: 0
   playerInRange: 0
---- !u!114 &360447568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360447561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0cca0ee86192b47920d26be2257d87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 3
 --- !u!1 &382199982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,7 +3628,6 @@ GameObject:
   - component: {fileID: 1796528809}
   - component: {fileID: 1796528808}
   - component: {fileID: 1796528807}
-  - component: {fileID: 1796528806}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -3650,19 +3635,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1796528806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796528805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0cca0ee86192b47920d26be2257d87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 3
 --- !u!114 &1796528807
 MonoBehaviour:
   m_ObjectHideFlags: 0
