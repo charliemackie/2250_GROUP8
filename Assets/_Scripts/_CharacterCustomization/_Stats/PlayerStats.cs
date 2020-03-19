@@ -32,6 +32,8 @@ public class PlayerStats : CharacterStats
 
     public bool takingDamage;
 
+    public float timer = 2;
+
     // Create statsUI to update the stats
     StatsUI statsUI;
 
@@ -59,23 +61,24 @@ public class PlayerStats : CharacterStats
             TakeDamage(2);
         }
 
-        StartCoroutine(swordAnimation());
+        timer -= Time.deltaTime;
+        if (timer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            timer = 2;
+            StartCoroutine(swordAnimation());
+        }
     }
 
     IEnumerator swordAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Vector3 pos = new Vector3(-0.9f, 0.6f, 1.03f);
-            Quaternion rot = Quaternion.Euler(-50, 0, 90);
-            sword = Instantiate(prefab) as GameObject;
-            sword.transform.parent = GameObject.Find("FirstPersonPlayer").transform;
-            sword.transform.localPosition = pos;
-            sword.transform.localRotation = rot;
-            yield return new WaitForSeconds(0.5f);
-            Destroy(sword);
-        }
-        yield return new WaitForSeconds(0);
+        Vector3 pos = new Vector3(-0.9f, 0.6f, 1.03f);
+        Quaternion rot = Quaternion.Euler(-50, 0, 90);
+        sword = Instantiate(prefab) as GameObject;
+        sword.transform.parent = GameObject.Find("FirstPersonPlayer").transform;
+        sword.transform.localPosition = pos;
+        sword.transform.localRotation = rot;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(sword);
     }
 
     // Bring up the menu when a coin is collected
