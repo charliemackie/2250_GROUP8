@@ -17,7 +17,7 @@ public class EnemyStats : CharacterStats
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -33,20 +33,22 @@ public class EnemyStats : CharacterStats
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
 
-        if (collision.collider.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            print("IN RANGE");
             playerInRange = true;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
 
-        if (collision.collider.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            print("OUT OF RANGE");
             playerInRange = false;
         }
     }

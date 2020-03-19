@@ -27,6 +27,8 @@ public class PlayerStats : CharacterStats
     // Declare current health
     public int currentHealth;
 
+    public bool takingDamage;
+
     // Create statsUI to update the stats
     StatsUI statsUI;
 
@@ -45,9 +47,13 @@ public class PlayerStats : CharacterStats
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             Die();
+        }
+
+        if(takingDamage){
+            TakeDamage(2);
         }
     }
 
@@ -67,23 +73,23 @@ public class PlayerStats : CharacterStats
             // pause the rest of the game
             Time.timeScale = 0;
         }
+
+        if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
+        {
+            takingDamage = true;
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
 
-        if (collision.collider.CompareTag("Enemy1"))
+        if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
         {
-            TakeDamage(2);
-        }
-
-        if (collision.collider.CompareTag("Enemy2"))
-        {
-            TakeDamage(1);
+            takingDamage = false;
         }
     }
 
-        // Take damage / reduce healthbar
+    // Take damage / reduce healthbar
     void TakeDamage(int damage)
     {
         currentHealth -= (damage - defense);
