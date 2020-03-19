@@ -34,6 +34,8 @@ public class PlayerStats : CharacterStats
 
     public float timer = 2;
 
+    public static bool attack = false;
+
     // Create statsUI to update the stats
     StatsUI statsUI;
 
@@ -60,12 +62,13 @@ public class PlayerStats : CharacterStats
         if(takingDamage){
             TakeDamage(2);
         }
-
+        attack = false;
         timer -= Time.deltaTime;
         if (timer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             timer = 2;
             StartCoroutine(swordAnimation());
+            attack = true;
         }
     }
 

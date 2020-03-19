@@ -22,9 +22,8 @@ public class EnemyStats : CharacterStats
             Die();
         }
 
-        if(playerInRange && Input.GetKeyDown(KeyCode.LeftShift)){
+        if(playerInRange && PlayerStats.attack == true){
             currentHealth -= (25 - defense);
-            gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
             StartCoroutine(enemyHurt());
         }
     }
@@ -55,7 +54,8 @@ public class EnemyStats : CharacterStats
 
     IEnumerator enemyHurt()
     {
-        yield return new WaitForSeconds(4);
+        gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
     }
     
