@@ -54,7 +54,24 @@ public class RayCastShoot : MonoBehaviour
                 // Set the end position for our laser line 
                 laserLine.SetPosition(1, hit.point);
 
-   
+                // Get a reference to a health script attached to the collider we hit
+                EnemyDamage health = hit.collider.GetComponent<EnemyDamage>();
+
+                // If there was a health script attached
+                if (health != null)
+                {
+                    // Call the damage function of that script, passing in our gunDamage variable
+                    health.Damage(gunDamage);
+                }
+
+                // Check if the object we hit has a rigidbody attached
+                if (hit.rigidbody != null)
+                {
+                    // Add force to the rigidbody we hit, in the direction from which it was hit
+                    hit.rigidbody.AddForce(-hit.normal * hitForce);
+                }
+
+
             }
             else
             {
