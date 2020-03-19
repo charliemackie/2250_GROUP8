@@ -115,6 +115,7 @@
      <Compile Include="Assets\_Scripts\_CharacterScripts\HealthBar.cs" />
      <Compile Include="Assets\_Scripts\_CharacterScripts\Modifier.cs" />
      <Compile Include="Assets\_Scripts\_CharacterScripts\ModifyMenuUI.cs" />
+     <Compile Include="Assets\_Scripts\Rotator.cs" />
      <None Include="Assets\_Materials\_LandMaterials\Environment\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\_Materials\_LandMaterials\Environment\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\_Materials\_LandMaterials\Environment\PostProcessing\Resources\Shaders\Fog.shader" />
