@@ -111,7 +111,6 @@
      <Compile Include="Assets\_Scripts\_CharacterCustomization\PlayerMovement.cs" />
      <Compile Include="Assets\_Scripts\_EnemyScripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\_EnemyScripts\EnemyRandomController.cs" />
-     <Compile Include="Assets\_Scripts\_PlayerScripts\PlayerManager.cs" />
      <Compile Include="Assets\_Scripts\_PlayerScripts\PlayerMovement\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\_PlayerScripts\PlayerMovement\PlayerMotor.cs" />
      <Compile Include="Assets\EnemyDamage.cs" />

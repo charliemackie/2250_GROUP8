@@ -21,6 +21,8 @@ public class PlayerStats : CharacterStats
 
     #endregion
 
+    public GameObject player;
+
     // Set the move speed
     private float moveSpeed = 5f;
 
@@ -32,7 +34,7 @@ public class PlayerStats : CharacterStats
 
     public bool takingDamage;
 
-    public float timer = 2;
+    public float timer = 2;     // The time at which the player may attack again (every two seconds the sword may attack an enemy)
 
     public static bool attack = false;
 
@@ -62,6 +64,9 @@ public class PlayerStats : CharacterStats
         if(takingDamage){
             TakeDamage(2);
         }
+
+        // Timer that only allows the player to attack every 2 seconds
+        // Essentially so that the player can't spam left shift
         attack = false;
         timer -= Time.deltaTime;
         if (timer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
@@ -72,6 +77,10 @@ public class PlayerStats : CharacterStats
         }
     }
 
+    /// <summary>
+    /// Sword prefab animation that pops up when the player attacks
+    /// </summary>
+    /// <returns></returns>
     IEnumerator swordAnimation()
     {
         Vector3 pos = new Vector3(-0.9f, 0.6f, 1.03f);
@@ -101,12 +110,14 @@ public class PlayerStats : CharacterStats
             Time.timeScale = 0;
         }
 
+        // Note when the player is taking damage from the enemy
         if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
         {
             takingDamage = true;
         }
     }
 
+    // Note when the player is no longer taking damage from the enemy
     private void OnTriggerExit(Collider other)
     {
 
