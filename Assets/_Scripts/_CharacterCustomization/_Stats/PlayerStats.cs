@@ -24,6 +24,9 @@ public class PlayerStats : CharacterStats
     // Set the move speed
     private float moveSpeed = 5f;
 
+    public GameObject prefab; // the game object's prefab
+    public GameObject sword;
+
     // Declare current health
     public int currentHealth;
 
@@ -55,6 +58,24 @@ public class PlayerStats : CharacterStats
         if(takingDamage){
             TakeDamage(2);
         }
+
+        StartCoroutine(swordAnimation());
+    }
+
+    IEnumerator swordAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Vector3 pos = new Vector3(-0.9f, 0.6f, 1.03f);
+            Quaternion rot = Quaternion.Euler(-50, 0, 90);
+            sword = Instantiate(prefab) as GameObject;
+            sword.transform.parent = GameObject.Find("FirstPersonPlayer").transform;
+            sword.transform.localPosition = pos;
+            sword.transform.localRotation = rot;
+            yield return new WaitForSeconds(0.5f);
+            Destroy(sword);
+        }
+        yield return new WaitForSeconds(0);
     }
 
     // Bring up the menu when a coin is collected

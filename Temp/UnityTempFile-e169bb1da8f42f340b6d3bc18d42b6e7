@@ -1,11 +1,12 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.PackageManagerUI.Editor.dll
+/out:Temp/Assembly-CSharp-Editor.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
+/reference:Library/ScriptAssemblies/Assembly-CSharp.dll
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -69,8 +70,16 @@
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/UnityEditor.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\Managed/Unity.Locator.dll"
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+/reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -82,12 +91,10 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll
 /reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
 /reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
 /reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
 /reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
-/reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll
 /reference:C:/Users/jonri/Documents/GitHub/2250_GROUP8/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll"
 /reference:"C:\Program Files\Unity\Hub\Editor\2018.4.15f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.dll"
@@ -305,55 +312,37 @@
 /define:UNITY_TEAM_LICENSE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\AssemblyInfo.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\External\SemVersion.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\External\SemVersionExtension.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Common\ApplicationUtil.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Common\OperationSignal.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Common\Resources.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Common\ThreadedDelay.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\IAddOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\IBaseOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\IListOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\IOperationFactory.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\IRemoveOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Interfaces\ISearchOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\OperationFactory.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\Package.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageAssetPostprocessor.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageCollection.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageError.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageFilter.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageGroupOrigins.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageInfo.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageInfoListExtensions.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageJsonHelper.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageListExtensions.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageOrigin.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageSearchFilter.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageState.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Packages\PackageTag.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmAddOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmBaseOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmListOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmOperationFactory.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmRemoveOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\Services\Upm\UpmSearchOperation.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Common\Alert.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Common\LoadingSpinner.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Common\PopupField.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Common\UIUtils.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Common\VersionItem.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\Interfaces\IPackageManagerExtension.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageAddFromUrlField.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageDetails.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageFiltering.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageGroup.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageItem.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageList.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageManagerExtensions.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageManagerPrefs.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageManagerToolbar.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageManagerWindow.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageSearchToolbar.cs
-C:\Users\jonri\Documents\GitHub\2250_GROUP8\Library\PackageCache\com.unity.package-manager-ui@2.0.8\Editor\Sources\UI\PackageStatusBar.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\AntialiasingModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\BloomModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\ColorGradingModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\DitheringModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\FogModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\GrainModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\MotionBlurModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\UserLutModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Models\VignetteModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Monitors\HistogramMonitor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Monitors\ParadeMonitor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Monitors\WaveformMonitor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PostProcessingBehaviourEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PostProcessingFactory.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PostProcessingInspector.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PostProcessingModelEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PostProcessingMonitor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Utils\CurveEditor.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Utils\EditorGUIHelper.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Utils\EditorResources.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Utils\FxStyles.cs
+Assets\_Materials\_LandMaterials\Environment\PostProcessing\Editor\Utils\ReflectionUtils.cs

@@ -25,7 +25,7 @@ public class EnemyStats : CharacterStats
         if(playerInRange && Input.GetKeyDown(KeyCode.LeftShift)){
             currentHealth -= (25 - defense);
             gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
-            StartCoroutine(waiter());
+            StartCoroutine(enemyHurt());
         }
     }
 
@@ -53,10 +53,9 @@ public class EnemyStats : CharacterStats
         }
     }
 
-    IEnumerator waiter()
+    IEnumerator enemyHurt()
     {
-        int wait_time = Random.Range(0, 2);
-        yield return new WaitForSeconds(wait_time);
+        yield return new WaitForSeconds(4);
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
     }
     
