@@ -12,12 +12,15 @@ public class EnemyStats : CharacterStats
     public int currentHealth;       // The current health of the enemy
     public bool playerInRange;      // Determining whether or not the player is in range of the enemy
 
+    Animator m_Animator;
+
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
     void Start()
     {
         currentHealth = maxHealth;
+        m_Animator = gameObject.GetComponent<Animator>();
     }
 
     /// <summary>
@@ -42,7 +45,8 @@ public class EnemyStats : CharacterStats
     /// Overriding the die method of the base to destroy the enemy once it dies
     /// </summary>
     override public void Die(){
-        Destroy(this.gameObject);
+        m_Animator.SetTrigger("Die");
+        StartCoroutine(pauseDeath());
         base.Die();
     }
 
@@ -94,6 +98,12 @@ public class EnemyStats : CharacterStats
 
             gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator pauseDeath()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
     }
 
 
