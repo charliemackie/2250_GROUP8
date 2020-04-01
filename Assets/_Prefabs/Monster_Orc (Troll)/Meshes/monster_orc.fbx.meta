@@ -509,7 +509,7 @@ ModelImporter:
       name: Monster_anim|Idle_2
       takeName: Monster_anim|Idle_2
       firstFrame: 0
-      lastFrame: 38
+      lastFrame: 2.7
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
