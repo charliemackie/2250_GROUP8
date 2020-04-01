@@ -16,6 +16,10 @@ public class EnemyController : MonoBehaviour
 
     Animator m_Animator;
 
+    bool movingInLane;
+
+    public int laneLength = 10;
+
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
@@ -24,6 +28,7 @@ public class EnemyController : MonoBehaviour
         target = PlayerStats.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         m_Animator = gameObject.GetComponent<Animator>();
+        movingInLane = false;
     }
 
     /// <summary>
@@ -55,6 +60,25 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
             }
         }
+
+        if(agent.velocity == new Vector3(0f, 0f, 0f) && distance > lookRadius && !movingInLane)
+        {
+            MoveInLane();
+        }
+    }
+
+    IEnumerator waiter()
+    {
+        movingInLane = true;
+        yield return new WaitForSeconds(3);
+        int direction = Random.Range(-1, 2);
+        Vector3 newPosition = new Vector3(transform.position.x + (direction * laneLength), transform.position.y, transform.position.z);
+        agent.SetDestination(newPosition);
+        movingInLane = false;
+    }
+
+    void MoveInLane(){
+        StartCoroutine(waiter());
     }
 
     /// <summary>
