@@ -95,8 +95,7 @@ public class EnemyStats : CharacterStats
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
-
-            gameObject.SetActive(false);
+            Die();
         }
     }
 
