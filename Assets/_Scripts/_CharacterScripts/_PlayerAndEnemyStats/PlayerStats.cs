@@ -114,6 +114,7 @@ public class PlayerStats : CharacterStats
         if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
         {
             takingDamage = true;
+            other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
