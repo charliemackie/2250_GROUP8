@@ -92,10 +92,16 @@ public class EnemyStats : CharacterStats
 
     public void GunDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        if (currentHealth <= 0)
+        if (!gameObject.CompareTag("Enemy0"))
         {
-            Die();
+            currentHealth -= damageAmount;
+            StartCoroutine(EnemyHurt());
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }else{
+            m_Animator.SetTrigger("Block");
         }
     }
 
