@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
 
     bool movingInLane;
 
+    public int laneLength = 10;
+
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
@@ -70,7 +72,7 @@ public class EnemyController : MonoBehaviour
         movingInLane = true;
         yield return new WaitForSeconds(3);
         int direction = Random.Range(-1, 2);
-        Vector3 newPosition = new Vector3(transform.position.x + (direction * 30), transform.position.y, transform.position.z);
+        Vector3 newPosition = new Vector3(transform.position.x + (direction * laneLength), transform.position.y, transform.position.z);
         agent.SetDestination(newPosition);
         movingInLane = false;
     }
