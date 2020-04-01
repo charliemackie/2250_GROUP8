@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     Transform target;               // The target of the enemy
     NavMeshAgent agent;             // The mesh that the enemy can see within
 
+    Animator m_Animator;
+
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
@@ -21,6 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerStats.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        m_Animator = gameObject.GetComponent<Animator>();
     }
 
     /// <summary>
@@ -28,6 +31,17 @@ public class EnemyController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if (agent.velocity == new Vector3(0f, 0f, 0f))
+        {
+            m_Animator.ResetTrigger("Run");
+            m_Animator.SetTrigger("Idle");
+        }
+        else
+        {
+            m_Animator.ResetTrigger("Idle");
+            m_Animator.SetTrigger("Run");
+        }
+
         // Finding the distance from the enemy to the player
         float distance = Vector3.Distance(target.position, transform.position);
 
@@ -36,7 +50,7 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(target.position);
 
             // Setting the stopping distance from the player
-            if(distance <= agent.stoppingDistance ){
+            if (distance <= agent.stoppingDistance ){
                 // Attack the target
                 FaceTarget();
             }
