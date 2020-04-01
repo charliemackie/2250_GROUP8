@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
         movingInLane = true;
         yield return new WaitForSeconds(3);
         int direction = Random.Range(-1, 2);
-        Vector3 newPosition = new Vector3(transform.position.x + (direction * 30), transform.position.y, transform.position.z + (direction * 30));
+        Vector3 newPosition = new Vector3(transform.position.x + (direction * 30), transform.position.y, transform.position.z);
         agent.SetDestination(newPosition);
         movingInLane = false;
     }
