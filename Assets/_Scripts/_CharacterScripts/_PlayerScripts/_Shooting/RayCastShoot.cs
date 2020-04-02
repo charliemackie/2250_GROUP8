@@ -4,7 +4,7 @@ using System.Collections;
 public class RayCastShoot : MonoBehaviour
 {
 
-    public int gunDamage = 1;                                           
+    public int gunDamage = 10;                                           
     public float fireRate = 0.25f;                                        
     public float weaponRange = 50f;                                       
     public float hitForce = 100f;                                        

@@ -10,15 +10,13 @@ public class RayViewer : MonoBehaviour
 
 
     void Start()
-    {
-        
+    {        
         fpsCam = GetComponentInParent<Camera>();
     }
 
 
     void Update()
-    {
-        
+    {        
         Vector3 lineOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0f, 0f, 0.0f));
     }
 }

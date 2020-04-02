@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Text levelNumber;
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -31,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LevelNumber();
+
         // Create tiny sphere. If it collides with it, grounded will be true.
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -60,5 +65,20 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void LevelNumber()
+    {
+        if (transform.position.y > 47)
+        {
+            levelNumber.text = "3";
+        } else if (transform.position.y > 37)
+        {
+            levelNumber.text = "2";
+        } else
+        {
+            levelNumber.text = "1";
+        }
+        
     }
 }
