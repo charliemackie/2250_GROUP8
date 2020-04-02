@@ -38,6 +38,8 @@ public class PlayerStats : CharacterStats
 
     public static bool attack = false;
 
+    private bool wait = false;
+
     // Create statsUI to update the stats
     StatsUI statsUI;
 
@@ -61,8 +63,9 @@ public class PlayerStats : CharacterStats
             Die();
         }
 
-        if(takingDamage){
-            TakeDamage(2);
+        if(takingDamage && !wait)
+        {
+            TakeDamage(10);
         }
 
         // Timer that only allows the player to attack every 2 seconds
@@ -111,7 +114,7 @@ public class PlayerStats : CharacterStats
         }
 
         // Note when the player is taking damage from the enemy
-        if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
+        if ((other.CompareTag("Enemy1") || other.CompareTag("Enemy2")))
         {
             takingDamage = true;
             other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
@@ -132,8 +135,16 @@ public class PlayerStats : CharacterStats
     void TakeDamage(int damage)
     {
         currentHealth -= (damage - defense);
+        wait = true;
 
         healthBar.SetHealth(currentHealth);
+        StartCoroutine(waiter());
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(2f);
+        wait = false;
     }
 
     // Add to speed if chosen
