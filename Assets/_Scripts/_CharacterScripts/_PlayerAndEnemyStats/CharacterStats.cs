@@ -5,12 +5,17 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     // Set max health
-    public int maxHealth = 100;
+    private int maxHealth = 100;
 
     // All character stats
-    public int speed = 0;
-    public int defense = 0;
-    public int strength = 0;
+    public int speed;
+    public int defense;
+    public int strength;
+
+    public int getMaxHealth()
+    {
+        return maxHealth;
+    }
 
     public virtual void Die()
     {

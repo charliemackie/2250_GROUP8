@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : CharacterStats
 {
@@ -38,20 +39,38 @@ public class PlayerStats : CharacterStats
 
     public static bool attack = false;
 
+    private bool hasRespawned;
+
     // Create statsUI to update the stats
     StatsUI statsUI;
+
+    public Xp xpBar;
 
     public HealthBar healthBar;
 
     public GameObject modifyMenuUI;
+
+    public GameObject charlie;
+
+    public Transform respawn;
+
+    private GameObject lastEnemy;
+
+    CharacterExperience playerXp;
+
+    private int killCount;
     
     // Start is called before the first frame update
     void Start()
     {
+        hasRespawned = false;
+        killCount = 0;
+        playerXp = GetComponent<CharacterExperience>();
         statsUI = StatsUI.instance;
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
+        currentHealth = getMaxHealth();
+        healthBar.SetMaxHealth(getMaxHealth());
+        xpBar.SetXp(playerXp.xp);
+    } 
 
     // Update is called once per frame
     void Update()
@@ -75,6 +94,14 @@ public class PlayerStats : CharacterStats
             StartCoroutine(SwordAnimation());
             attack = true;
         }
+    }
+
+    // add a enemy kill when the player kills and enemy 
+    public void killedEnemy(CharacterExperience enemyXp)
+    {
+        killCount++;
+        playerXp.stealExp(enemyXp);
+        xpBar.SetXp(playerXp.xp);
     }
 
     /// <summary>
@@ -101,6 +128,12 @@ public class PlayerStats : CharacterStats
         // Check if the coin is picked up
         if (other.CompareTag("coin"))
         {
+            // Collect coin xp
+            playerXp.stealExp(other.GetComponent<CharacterExperience>());
+
+            // Adjust xpBar
+            xpBar.SetXp(playerXp.xp);
+
             // Destroy coin and bring up temporary menu
             Debug.Log("The coin has been picked up");
             Destroy(other.gameObject);
@@ -113,8 +146,9 @@ public class PlayerStats : CharacterStats
         // Note when the player is taking damage from the enemy
         if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
         {
+            lastEnemy = other.gameObject;
+            Debug.Log(lastEnemy.tag);
             takingDamage = true;
-            other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
@@ -151,7 +185,7 @@ public class PlayerStats : CharacterStats
     // Add to strength if chosen
     public void OnStrengthModifyButton()
     {
-        strength = strength + 1;
+        strength = strength + 5;
         Debug.Log("Strength has been added");
         modifyMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -168,6 +202,29 @@ public class PlayerStats : CharacterStats
         Time.timeScale = 1;
         statsUI.UpdateStats();
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    override public void Die()
+    {
+        if (hasRespawned == false)
+        {
+            base.Die();
+            GetComponent<Transform>().position = respawn.position;
+
+            CharacterExperience enemyXp = lastEnemy.GetComponent<CharacterExperience>();
+            Debug.Log(enemyXp.xp);
+            enemyXp.stealExp(playerXp);
+
+            xpBar.SetXp(playerXp.xp);
+            currentHealth = getMaxHealth();
+            hasRespawned = true;
+        }
+        else if (hasRespawned == true)
+        {
+            base.Die();
+            SceneManager.LoadScene("Main");
+        }
+        
     }
 
     public float getSpeed()
