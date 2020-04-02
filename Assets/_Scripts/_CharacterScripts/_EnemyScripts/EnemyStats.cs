@@ -12,7 +12,8 @@ public class EnemyStats : CharacterStats
     public int currentHealth;       // The current health of the enemy
     public bool playerInRange;      // Determining whether or not the player is in range of the enemy
     public bool attack;
-    public static int hitStrength = 25;
+    public int hitStrength = 10;
+    public int enemyMaxHealth = 100;
     private bool wait = false;
     Collider player;
 
@@ -23,7 +24,7 @@ public class EnemyStats : CharacterStats
     /// </summary>
     void Start()
     {
-        currentHealth = getMaxHealth();
+        currentHealth = enemyMaxHealth;
         m_Animator = gameObject.GetComponent<Animator>();
     }
 
@@ -39,15 +40,15 @@ public class EnemyStats : CharacterStats
         }
 
         // If the player is in range of the enemy and the player is attacking the enemy than it must deal damage
-        if(playerInRange && PlayerStats.attack == true){
-            currentHealth -= (hitStrength - defense);
+        if (playerInRange && PlayerStats.attack == true){
+            currentHealth -= PlayerStats.hitStrength;
             StartCoroutine(EnemyHurt());
         }
 
         if(attack && !wait)
         {
             PlayerStats playerStats = player.gameObject.GetComponent<PlayerStats>();
-            playerStats.TakeDamage(10);
+            playerStats.TakeDamage(hitStrength);
             wait = true;
             m_Animator.SetTrigger("Attack");
             StartCoroutine(waiter());
