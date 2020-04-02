@@ -11,6 +11,7 @@ public class EnemyStats : CharacterStats
 
     public int currentHealth;       // The current health of the enemy
     public bool playerInRange;      // Determining whether or not the player is in range of the enemy
+    public bool attack;
 
     Animator m_Animator;
 
@@ -38,6 +39,10 @@ public class EnemyStats : CharacterStats
         if(playerInRange && PlayerStats.attack == true){
             currentHealth -= (25 - defense);
             StartCoroutine(EnemyHurt());
+        }
+
+        if(attack){
+            m_Animator.SetTrigger("Attack");
         }
     }
 
@@ -110,7 +115,5 @@ public class EnemyStats : CharacterStats
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
-
-
 
 }

@@ -116,8 +116,10 @@ public class PlayerStats : CharacterStats
         // Note when the player is taking damage from the enemy
         if ((other.CompareTag("Enemy1") || other.CompareTag("Enemy2")))
         {
+            //other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
+            EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
+            enemy.attack = true;
             takingDamage = true;
-            other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
@@ -127,6 +129,8 @@ public class PlayerStats : CharacterStats
 
         if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
         {
+            EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
+            enemy.attack = false;
             takingDamage = false;
         }
     }
