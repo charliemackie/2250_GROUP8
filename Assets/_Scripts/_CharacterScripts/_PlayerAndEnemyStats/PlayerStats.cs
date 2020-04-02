@@ -32,7 +32,7 @@ public class PlayerStats : CharacterStats
     // Declare current health
     public int currentHealth;
 
-    public bool takingDamage;
+    //public bool takingDamage;
 
     public float timer = 2;     // The time at which the player may attack again (every two seconds the sword may attack an enemy)
 
@@ -61,10 +61,10 @@ public class PlayerStats : CharacterStats
             Die();
         }
 
-        if(takingDamage && !wait)
-        {
-            //TakeDamage(10);
-        }
+        //if(takingDamage)
+        //{
+        //    //TakeDamage(10);
+        //}
 
         // Timer that only allows the player to attack every 2 seconds
         // Essentially so that the player can't spam left shift
@@ -111,27 +111,27 @@ public class PlayerStats : CharacterStats
             Time.timeScale = 0;
         }
 
-        // Note when the player is taking damage from the enemy
-        if ((other.CompareTag("Enemy1") || other.CompareTag("Enemy2")))
-        {
-            //other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
-            EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
-            enemy.attack = true;
-            takingDamage = true;
-        }
+        //// Note when the player is taking damage from the enemy
+        //if ((other.CompareTag("Enemy1") || other.CompareTag("Enemy2")))
+        //{
+        //    //other.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Attack");
+        //    EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
+        //    enemy.attack = true;
+        //    takingDamage = true;
+        //}
     }
 
-    // Note when the player is no longer taking damage from the enemy
-    private void OnTriggerExit(Collider other)
-    {
+    //// Note when the player is no longer taking damage from the enemy
+    //private void OnTriggerExit(Collider other)
+    //{
 
-        if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
-        {
-            EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
-            enemy.attack = false;
-            takingDamage = false;
-        }
-    }
+    //    if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
+    //    {
+    //        EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
+    //        enemy.attack = false;
+    //        takingDamage = false;
+    //    }
+    //}
 
     // Take damage / reduce healthbar
     public void TakeDamage(int damage)
