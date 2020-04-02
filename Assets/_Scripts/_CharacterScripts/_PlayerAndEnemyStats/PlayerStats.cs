@@ -38,8 +38,6 @@ public class PlayerStats : CharacterStats
 
     public static bool attack = false;
 
-    private bool wait = false;
-
     // Create statsUI to update the stats
     StatsUI statsUI;
 
@@ -65,7 +63,7 @@ public class PlayerStats : CharacterStats
 
         if(takingDamage && !wait)
         {
-            TakeDamage(10);
+            //TakeDamage(10);
         }
 
         // Timer that only allows the player to attack every 2 seconds
@@ -136,19 +134,10 @@ public class PlayerStats : CharacterStats
     }
 
     // Take damage / reduce healthbar
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= (damage - defense);
-        wait = true;
-
         healthBar.SetHealth(currentHealth);
-        StartCoroutine(waiter());
-    }
-
-    IEnumerator waiter()
-    {
-        yield return new WaitForSeconds(2f);
-        wait = false;
     }
 
     // Add to speed if chosen
@@ -167,6 +156,7 @@ public class PlayerStats : CharacterStats
     public void OnStrengthModifyButton()
     {
         strength = strength + 1;
+        EnemyStats.hitStrength += strength;
         Debug.Log("Strength has been added");
         modifyMenuUI.SetActive(false);
         Time.timeScale = 1;

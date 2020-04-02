@@ -12,6 +12,9 @@ public class EnemyStats : CharacterStats
     public int currentHealth;       // The current health of the enemy
     public bool playerInRange;      // Determining whether or not the player is in range of the enemy
     public bool attack;
+    public static int hitStrength = 25;
+    private bool wait = false;
+    Collider player;
 
     Animator m_Animator;
 
@@ -37,13 +40,24 @@ public class EnemyStats : CharacterStats
 
         // If the player is in range of the enemy and the player is attacking the enemy than it must deal damage
         if(playerInRange && PlayerStats.attack == true){
-            currentHealth -= (25 - defense);
+            currentHealth -= (hitStrength - defense);
             StartCoroutine(EnemyHurt());
         }
 
-        if(attack){
+        if(attack && !wait)
+        {
+            PlayerStats playerStats = player.gameObject.GetComponent<PlayerStats>();
+            playerStats.TakeDamage(10);
+            wait = true;
             m_Animator.SetTrigger("Attack");
+            StartCoroutine(waiter());
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(2f);
+        wait = false;
     }
 
     /// <summary>
@@ -61,9 +75,11 @@ public class EnemyStats : CharacterStats
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        player = other;
         // Note when the player is in range
         if (other.CompareTag("Player"))
         {
+            attack = true;
             print("IN RANGE");
             playerInRange = true;
         }
@@ -75,10 +91,11 @@ public class EnemyStats : CharacterStats
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
-        
+        player = other;
         // Note when the player is out of range
         if (other.CompareTag("Player"))
         {
+            attack = false;
             print("OUT OF RANGE");
             playerInRange = false;
         }
