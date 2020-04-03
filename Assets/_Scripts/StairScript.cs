@@ -20,6 +20,7 @@ public class StairScript : MonoBehaviour
 
     public GameObject groundStairs;
     public GameObject middleStairs;
+    public GameObject gate;
 
     private void Start()
     {
@@ -36,6 +37,8 @@ public class StairScript : MonoBehaviour
         if (PlayerStats.instance.GetComponent<CharacterExperience>().xp >= 390)
         {
             middleStairs.SetActive(true);
+            gate.SetActive(true);
+
         }
     }
 
@@ -43,5 +46,6 @@ public class StairScript : MonoBehaviour
     {
         groundStairs.SetActive(false);
         middleStairs.SetActive(false);
+        gate.SetActive(false);
     }
 }

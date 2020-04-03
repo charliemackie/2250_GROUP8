@@ -61,7 +61,9 @@ public class PlayerStats : CharacterStats
     CharacterExperience playerXp;
 
     private int killCount;
-    
+
+    public static int hitStrength = 25;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -189,18 +191,6 @@ public class PlayerStats : CharacterStats
         }
     }
 
-    //// Note when the player is no longer taking damage from the enemy
-    //private void OnTriggerExit(Collider other)
-    //{
-
-    //    if (other.CompareTag("Enemy1") || other.CompareTag("Enemy2"))
-    //    {
-    //        EnemyStats enemy = other.transform.parent.gameObject.GetComponent<EnemyStats>();
-    //        enemy.attack = false;
-    //        takingDamage = false;
-    //    }
-    //}
-
     // Take damage / reduce healthbar
     public void TakeDamage(int damage)
     {
@@ -224,7 +214,7 @@ public class PlayerStats : CharacterStats
     // Add to strength if chosen
     public void OnStrengthModifyButton()
     {
-        strength = strength + 5;
+        hitStrength += 10;
         Debug.Log("Strength has been added");
         modifyMenuUI.SetActive(false);
         Time.timeScale = 1;
