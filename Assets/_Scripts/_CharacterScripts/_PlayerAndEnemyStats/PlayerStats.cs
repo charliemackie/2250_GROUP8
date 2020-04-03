@@ -214,7 +214,7 @@ public class PlayerStats : CharacterStats
     // Add to strength if chosen
     public void OnStrengthModifyButton()
     {
-        hitStrength += 10;
+        strength += 10;
         Debug.Log("Strength has been added");
         modifyMenuUI.SetActive(false);
         Time.timeScale = 1;
