@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{6C882B93-16DE-E577-290F-E49708C87C58}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/StairScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/_CharacterScripts/_PlayerAndEnemyStats/PlayerStats.cs">
     <Files>
-      <File FileName="Assets/_Scripts/StairScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/StairScript.cs" Line="42" Column="10" />
+      <File FileName="Assets/_Scripts/_CharacterScripts/_PlayerAndEnemyStats/PlayerStats.cs" Line="12" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
