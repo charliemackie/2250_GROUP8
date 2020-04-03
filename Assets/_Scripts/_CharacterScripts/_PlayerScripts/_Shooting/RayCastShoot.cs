@@ -19,9 +19,7 @@ public class RayCastShoot : MonoBehaviour
     void Start()
     {
         // Get and store a reference to our LineRenderer component
-        laserLine = GetComponent<LineRenderer>();
-
-        
+        laserLine = GetComponent<LineRenderer>();        
 
         // Get and store a reference to our Camera by searching this GameObject and its parents
         fpsCam = GetComponentInParent<Camera>();
@@ -33,6 +31,8 @@ public class RayCastShoot : MonoBehaviour
         // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
+            AudioManager.instance.Play("GunSound");
+
             // Update the time when our player can fire next
             nextFire = Time.time + fireRate;
 
@@ -84,9 +84,6 @@ public class RayCastShoot : MonoBehaviour
 
     private IEnumerator ShotEffect()
     {
-
-       
-
         // Turn on our line renderer
         laserLine.enabled = true;
 

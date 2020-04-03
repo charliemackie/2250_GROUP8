@@ -10,7 +10,7 @@ public class RayViewer : MonoBehaviour
 
 
     void Start()
-    {        
+    {
         fpsCam = GetComponentInParent<Camera>();
     }
 

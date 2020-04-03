@@ -10,15 +10,10 @@ public class MouseLook : MonoBehaviour
 
     float xRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     // Update is called once per frame
     void Update()
     {
+
         // Allow the player to vertically adn horizontally
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

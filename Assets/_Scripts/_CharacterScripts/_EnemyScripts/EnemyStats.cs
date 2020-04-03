@@ -108,6 +108,7 @@ public class EnemyStats : CharacterStats
     /// <returns></returns>
     IEnumerator EnemyHurt()
     {
+        AudioManager.instance.Play("EnemyHurt");
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
         gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;

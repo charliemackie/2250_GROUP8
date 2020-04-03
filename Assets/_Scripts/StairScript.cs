@@ -28,12 +28,12 @@ public class StairScript : MonoBehaviour
 
     public void spawnSteps()
     {
-        if (PlayerStats.instance.GetComponent<CharacterExperience>().xp >= 15)
+        if (PlayerStats.instance.GetComponent<CharacterExperience>().xp >= 265)
         {
             groundStairs.SetActive(true);
         }
 
-        if (PlayerStats.instance.GetComponent<CharacterExperience>().xp >= 30)
+        if (PlayerStats.instance.GetComponent<CharacterExperience>().xp >= 390)
         {
             middleStairs.SetActive(true);
         }
